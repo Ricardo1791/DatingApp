@@ -10,6 +10,11 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorInterceptorProvider } from '../app/_services/error.interceptor';
 
+import { AuthService } from '../app/_services/auth.service';
+import { AlertifyService } from '../app/_services/alertify.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,9 +26,11 @@ import { ErrorInterceptorProvider } from '../app/_services/error.interceptor';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot()
   ],
-  providers: [ ErrorInterceptorProvider ],
+  providers: [ ErrorInterceptorProvider, AuthService, AlertifyService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
