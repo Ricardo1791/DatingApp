@@ -10,7 +10,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.API.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -31,7 +30,6 @@ namespace DatingApp.API.Controllers
             return values;
         }
 
-        [AllowAnonymous]
         // GET api/values/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Value>> Get(int id)
