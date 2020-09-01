@@ -37,7 +37,7 @@ namespace DatingApp.API.Controllers
             return usersDTO.ToList();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}",Name ="GetUser")]
         public async Task<ActionResult<UserForDetailDTO>> GetUser(int id)
         {
             var user = await _repo.GetUser(id);

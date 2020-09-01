@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './routes';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -32,6 +32,7 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 export function obtenerToken(){
   return localStorage.getItem('token');
@@ -59,6 +60,7 @@ export function obtenerToken(){
     FormsModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     RouterModule.forRoot(AppRoutes),
     JwtModule.forRoot({
@@ -68,7 +70,8 @@ export function obtenerToken(){
         disallowedRoutes: ['localhost:5000/api/auth']
       }
     }),
-    NgxGalleryModule
+    NgxGalleryModule,
+    ReactiveFormsModule
   ],
   providers: [
     ErrorInterceptorProvider,
