@@ -34,6 +34,8 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimeagoModule } from 'ngx-timeago';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 export function obtenerToken(){
   return localStorage.getItem('token');
@@ -64,6 +66,8 @@ export function obtenerToken(){
     BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
     TimeagoModule.forRoot(),
+    PaginationModule.forRoot(),
+    ButtonsModule.forRoot(),
     RouterModule.forRoot(AppRoutes),
     JwtModule.forRoot({
       config: {
