@@ -17,7 +17,7 @@ export class MemberListComponent implements OnInit {
   userParams: any = {};
   pagination: Pagination;
 
-  constructor(private userServie: UserService,
+  constructor(private userService: UserService,
     private alertify: AlertifyService,
     private route: ActivatedRoute) { }
 
@@ -47,7 +47,7 @@ export class MemberListComponent implements OnInit {
   }
 
   loadUsers(){
-    this.userServie.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams)
+    this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, this.userParams)
     .subscribe((res: PaginatedResult<User[]>) => {
       this.Users = res.result;
       this.pagination = res.pagination;
